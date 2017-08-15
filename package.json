@@ -1,0 +1,30 @@
+{
+  "name": "require-global-node-module",
+  "version": "1.0.0",
+  "description": "Require a globally installed npm module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/sdgluck/require-global-node-module"
+  },
+  "keywords": [
+    "require",
+    "global",
+    "node",
+    "module",
+    "node_modules",
+    "cli"
+  ],
+  "author": "Sam Gluck <sdgluck@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "20.0.4"
+  },
+  "jest": {
+    "testRegex": "tests"
+  }
+}
