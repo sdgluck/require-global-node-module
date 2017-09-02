@@ -2,7 +2,7 @@ var exec = require('child_process').execSync
 var path = require('path')
 var fs = require('fs')
 
-var globalModulesPath = String(exec('npm root -g')).replace(/\r?\n|\r/g, '')
+var globalModulesPath = String(exec('npm root -g')).replace(/[\r\n]+/g, '')
 
 function globalResolve (module) {
   return path.resolve(globalModulesPath, module)
