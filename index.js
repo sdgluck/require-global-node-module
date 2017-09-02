@@ -4,14 +4,17 @@ var fs = require('fs')
 
 var globalModulesPath = String(exec('npm root -g')).replace(/\r?\n|\r/g, '')
 
-exports.resolve = function globalResolve (module) {
+function globalResolve (module) {
   return path.resolve(globalModulesPath, module)
 }
 
-module.exports = function requireLocalNodeModule (module) {
+function globalRequire (module) {
   if (typeof module !== 'string' || !module.length) {
     throw new Error('Expecting module to be non-empty string')
   }
 
-  return require(exports.resolve(module))
+  return require(globalResolve(module))
 }
+
+globalRequire.resolve = globalResolve
+module.exports = globalRequire
