@@ -13,11 +13,6 @@ describe('require-global-node-module', () => {
 
   test('gets global module', () => {
     var nop = requireGlobal('nop')
-
-    if (!nop) {
-      console.log('install `nop` globally to test this lib')
-    }
-
     expect(typeof nop).toEqual('function')
   })
 })
